@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="MARYLAND CENTER FOR VETERANS EDUCATION AND TRAINING - EMERGENCY HOUSING (FOR VETERANS)">
-  <title>Veteran Shelter</title>
+  <title>John Hopkins Shelter for Tired Hackathon Students</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -18,14 +18,29 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  
+  <script type="text/javascript">
+
+    function fetchVars(){
+        setTimeout(function(){
+    $.get( "/vars", function( data ) {
+      console.log(data);
+      var split = data.split(",");
+
+      hock.innerHTML = split[0] + "/" + split[1];
+      bigbar.style.width = split[2] + "%";
+
+      fetchVars();
+    });
+  },1000);
+    }
+
+    fetchVars();
+
+</script>
   
 </head>
 <body>
   <section class="menu cid-r3JaEiPF6i" once="menu" id="menu2-14">
-
-    
-
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
@@ -63,13 +78,13 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-5"><strong>
+                <h2 class="align-center pb-3 mbr-fonts-style display-5"><strong id=hock>
                     $current$/$max$</strong></h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-2"><font color="#232323"><strong>CENTER FOR VETERANS EDUCATION AND TRAINING - FOR VETERANS</strong></font></h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-2"><font color="#232323"><strong>John Hopkins Shelter for Tired Hackathon Students</strong></font></h3>
                 
                 <h4 class="align-center">Capacity</h4>
                 <div class="progress" style="height: 35px;">
-                  <div text-color="black" class="progress-bar $status$ progress-bar-striped progress-bar-animated" role="progressbar" style="width: $cappert$" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div id="bigbar" text-color="black" class="progress-bar $status$ progress-bar-striped progress-bar-animated" role="progressbar" style="width: $cappert$" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
 
             </div>
@@ -84,9 +99,9 @@
     <div class="container">
         <div class="media-container-row">
             <div class="row col-12 col-md-8">
-                <div class="col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style display-7"><div>The Emergency Housing program provides up to 13 weeks of emergency housing for homeless veterans. Case management and VA benefits counseling is provided. For more information contact the Maryland Center for Veterans Education and Training or visit the Maryland Center for Veterans Education and Training website.</div></div>
-                <div class="col-12 col-md-6 pl-lg-4 mbr-text mbr-fonts-style display-7">301-321 North High Street<div>Baltimore, MD 21202
-</div><div>410-576-9626</div><div><a href="http://www.mcvet.org/">http://www.mcvet.org/</a></div><div><br></div></div>
+                <div class="col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style display-7"><div>They have rooms. Lots of rooms, perhaps too many rooms. Many of them have fake doors too, real fake doors.</div></div>
+                <div class="col-12 col-md-6 pl-lg-4 mbr-text mbr-fonts-style display-7">3400 N. Charles Street<div>Baltimore, MD 21218
+</div><div>911</div><div><a href="http://www.hophacks.org/">HopHacks/</a></div><div><br></div></div>
             </div>
         </div>
     </div>
@@ -99,7 +114,7 @@
         <div class="media-container-row">
             <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-5">
                 <div><strong>Services</strong></div><ul>
-                    <li>Up to 13 week stay</li><li>VA benefits counseling</li><li>Case mangment</li>
+                    <li>Up to 36 hr stay</li><li>Free food</li><li>Free floors</li>
                 </ul>
             </div>
         </div>

@@ -128,21 +128,6 @@ body {
   padding: 1.2rem 3.2rem;
   border-radius: 3px;
 }
-.bg-primary {
-  background-color: #7d77b8 !important;
-}
-.bg-success {
-  background-color: #f7ed4a !important;
-}
-.bg-info {
-  background-color: #82786e !important;
-}
-.bg-warning {
-  background-color: #879a9f !important;
-}
-.bg-danger {
-  background-color: #b1a374 !important;
-}
 .btn-primary,
 .btn-primary:active {
   background-color: #7d77b8 !important;
