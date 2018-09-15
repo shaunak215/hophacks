@@ -61,8 +61,7 @@ router.get('/shelter', function(req, res){
 router.get('/', function(req, res){
 	console.log("New connection");
 	res.sendFile('test.html');
-
-
 });
 
 router.listen(3000);
+console.log("Serve listening on port 3000");
