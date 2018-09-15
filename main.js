@@ -17,6 +17,7 @@ var spawn = require('child_process').spawn;
 //Configuration constants
 const DARKNET_EXE = "C:\\Users\\MLH Admin\\darknet\\build\\darknet\\x64\\";
 const IMAGE_OUTPUT = "C:\\Users\\MLH Admin\\Desktop\\Proj\\";
+const NODEJS_DIR = __dirname;
 
 process.chdir(DARKNET_EXE);
 
@@ -33,7 +34,8 @@ router.post('/upload', function(req, res) {
 	fs.writeFile(IMAGE_OUTPUT + "out.jpg", base64Data, 'base64', function(err) {
 		//HACK: Horribly hacky interfacing with Darknet
 		//Actually send the file to YOLO for processing
-		const ls = spawn(DARKNET_EXE + "darknet_no_gpu", ['detector', 'test', 'cfg/coco.data', 'cfg/yolov3.cfg', 'yolov3.weights', IMAGE_OUTPUT + "out.jpg", "-dont_show"]);
+		const ls = spawn(DARKNET_EXE + "darknet_no_gpu", ['detector', 'test', 'cfg/coco.data', 'cfg/yolov3.cfg', 
+			'yolov3.weights', IMAGE_OUTPUT + "out.jpg", "-dont_show"]);
 
 		let personCount = 0;
 
@@ -60,8 +62,15 @@ router.get('/shelter', function(req, res){
 
 router.get('/', function(req, res){
 	console.log("New connection");
-	res.sendFile('test.html');
+	res.sendFile(NODEJS_DIR + '/views/test.html');
 });
 
+//Just a basic demonstration thing
+router.get('/letmesee', function(req, res){
+	res.sendFile(NODEJS_DIR + '/views/letmesee.html');
+});
+
+router.use('/static', express.static(DARKNET_EXE))
+
 router.listen(3000);
-console.log("Serve listening on port 3000");
+console.log("Server listening on port 3000");
