@@ -89,7 +89,7 @@ const shelter_options = {
 		page: fs.readFileSync(NODEJS_DIR + '/views/Veteran.html').toString()
 	},
 	'JHack': {
-		max: 42,
+		max: 4,
 		page: fs.readFileSync(NODEJS_DIR + '/views/JHack.html').toString()
 	}};
 

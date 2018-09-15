@@ -29,6 +29,17 @@
       hock.innerHTML = split[0] + "/" + split[1];
       bigbar.style.width = split[2] + "%";
 
+      $("#bigbar").removeClass("bg-success");
+      $("#bigbar").removeClass("bg-warning");
+      $("#bigbar").removeClass("bg-danger");
+
+      if(split[2] > 75)
+        $("#bigbar").addClass("bg-danger");
+      else if(split[2] > 25)
+        $("#bigbar").addClass("bg-warning");
+      else
+        $("#bigbar").addClass("bg-success");
+
       fetchVars();
     });
   },1000);
@@ -99,9 +110,14 @@
     <div class="container">
         <div class="media-container-row">
             <div class="row col-12 col-md-8">
-                <div class="col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style display-7"><div>They have rooms. Lots of rooms, perhaps too many rooms. Many of them have fake doors too, real fake doors.</div></div>
-                <div class="col-12 col-md-6 pl-lg-4 mbr-text mbr-fonts-style display-7">3400 N. Charles Street<div>Baltimore, MD 21218
-</div><div>911</div><div><a href="http://www.hophacks.org/">HopHacks/</a></div><div><br></div></div>
+                <div class="col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style display-7"><div>They have rooms. Lots of rooms, perhaps too many rooms. Many of them have fake doors too, real fake doors.</div>
+
+                <br>
+                  3400 N. Charles Street<div>Baltimore, MD 21218
+                  </div><div>911</div><div><a href="http://www.hophacks.org/">HopHacks</a></div><div><br></div>
+              </div>
+                <div class="col-12 col-md-6 pl-lg-4 mbr-text width="100%" mbr-fonts-style display-7">
+<video width="100%" autoplay="" loop="" playsinline="" class="glitch-gilman"><source src="https://hophacks.com/images/f18/gilman-hall-Recovered-Recovered.mp4" type="video/mp4"></video>                </div>
             </div>
         </div>
     </div>
